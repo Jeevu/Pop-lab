@@ -1,0 +1,21 @@
+defun small-positive-odd ( a) ( cond ( (and (and (< a 100) (> a 0)) (> a 0) (oddp a)) T) (T nil))
+ defun f-to-c ( a) ( + ( * ( / 9 5) a) 32 )
+defun my-abs ( x) ( if ( < x 0) ( - x) x)
+ defun odd-positive ( a) ( if (and ( oddp a) ( < a 0) )  ( - a) a )
+ defun order ( a b) ( if (> a b) ( list b a) ( list a b)  )
+ defun compare (a b) ( cond ((= a b) 'equal ) ((< a b) 'small ) ((> a b) 'bigger))
+(defun where-is (n)
+                   (cond ((equal n 'pokhara) 'nepal)
+                         ((equal n 'ktm) 'nepal)
+                         ((equal n 'sidney) 'australia)
+                         (t 'unknown)))
+(defun my-fibonacci (n)
+              "this function will return nth fabonacci number"
+              ( cond ((> n 2) (+ (my-fibonacci (- n 1)) (my-fibonacci (- n 2))))
+                     ((equal n 1) 1)
+                     ((equal n 2) 2)))
+(defun my-length (a)
+                   "this finction will return the length of the list"
+                   (cond 
+                    ((null a) 0)
+                    (t (+ 1 (my-length (cdr a))))))
